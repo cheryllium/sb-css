@@ -1,0 +1,16 @@
+body { padding-top: 60px; }
+#content{background-color:#f8f7f9; padding-top: 100px; padding-left: 200px; }
+
+#sidebar, #bookmarks, #content > div:nth-child(1) > center, #postcards, #header, #menu, footer, hr, .pagination {display: none;}
+#page { width: 100%!important; margin: 0!important; }
+
+#shop-header {background: #fff; margin: 0; position: fixed; z-index:1; border-bottom:1px solid #fafafa; height: 60px; top: 0; left: 0; right: 0; text-align: left!important; }
+
+#shop-searchbar, #shop-categories { position: fixed;  z-index: 55;}
+
+#shop-categories { top: 60px; height: 40px; left: 0; right: 0; background-color: #fff; border-top: 1px solid #eee; }
+#shop-searchbar { top: 0; right: 0; }
+
+.pagination:nth-of-type(1) {display: flex; position: fixed; top: 100px; left: 0; z-index: 99; width: 200px; padding-top: 30px; padding-left: 30px; }
+
+#shop-categories strong, #shop-categories ul, #shop-categories li, .nav-link { display: inline; }

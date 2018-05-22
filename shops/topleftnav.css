@@ -1,4 +1,4 @@
-body { padding-top: 60px; }
+body { padding-top: 50px; }
 #content{background-color:#f8f7f9; padding-top: 100px; padding-left: 200px; }
 
 #sidebar, #bookmarks, #content > div:nth-child(1) > center, #postcards, #header, #menu, footer, hr, .pagination {display: none;}

@@ -1,16 +1,223 @@
-body { padding-top: 50px; }
-#content{background-color:#f8f7f9; padding-top: 100px; padding-left: 200px; }
+@import url('https://fonts.googleapis.com/css?family=Karla');
+* {
+    font-family: 'Karla' !important; }
 
-#sidebar, #bookmarks, #content > div:nth-child(1) > center, #postcards, #header, #menu, footer, hr, .pagination {display: none;}
-#page { width: 100%!important; margin: 0!important; }
+#sidebar, #bookmarks, #content > div:nth-child(1) > center, #postcards, #header, #menu, .hustler, footer, hr {
+    display: none; }
 
-#shop-header {background: #fff; margin: 0; position: fixed; z-index:1; border-bottom:1px solid #fafafa; height: 60px; top: 0; left: 0; right: 0; text-align: left!important; }
+html {
+    overflow: hidden; }
 
-#shop-searchbar, #shop-categories { position: fixed;  z-index: 55;}
+body {
+    border-top: 100px solid transparent;
+    overflow-x: hidden; }
 
-#shop-categories { top: 60px; height: 40px; left: 0; right: 0; background-color: #fff; border-top: 1px solid #eee; }
-#shop-searchbar { top: 0; right: 0; }
+#page {
+    width: 100%!important;
+    margin: 0!important;
+    margin: -60px 0 0 0 !important; }
 
-.pagination:nth-of-type(1) {display: flex; position: fixed; top: 100px; left: 0; z-index: 99; width: 200px; padding-top: 30px; padding-left: 30px; }
+#content {
+    padding-bottom: 0; }
 
-#shop-categories strong, #shop-categories ul, #shop-categories li, .nav-link { display: inline; }
+#page, #content, body {
+    background-color: #f8f7f9; }
+
+#shop-header {
+    background: #fff;
+    margin: 0;
+    position: fixed;
+    z-index: 1;
+    border-bottom: 1px solid #fafafa;
+    height: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: left!important; }
+
+#shop-description {
+    width: 200px;
+    position: fixed;
+    top: 100px;
+    height: 100%;
+    left: 0;
+    padding: 20px;
+    background: transparent; }
+
+#shop-searchbar, #shop-categories {
+    position: fixed;
+    z-index: 55; }
+
+
+/* --------- CATEGORIES
+-------------------- */
+#shop-categories {
+    top: 60px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    overflow: hidden;
+    background-color: #fff;
+    border-top: 1px solid #eee; }
+
+#shop-categories:hover {
+    height: initial; }
+
+#shop-categories div:first-child {
+    padding-left: 30px;
+    text-align: left !important; }
+
+#shop-categories strong, #shop-categories ul, .nav-link {
+    display: inline; }
+
+#shop-categories li {
+    display: inline-block;
+    margin-bottom: 5px }
+
+
+/* ------------- SEARCH
+-------------------- */
+.tt-input {
+    height: 26px;
+    width: 100px !important;
+    margin: 0 0 0 auto !important;
+    float: right;
+    transition: width 0.4s ease-in-out;}
+
+.tt-input:focus {
+    width: 225px !important; }
+
+#shop-searchbar .btn-lg {
+    height: 26px;
+    font-size: 12px !important;
+    padding: 0 1rem; }
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        max-width: 100%; } }
+
+#shop-searchbar {
+    top: 0;
+    right: 30px; }
+
+#shop-searchbar a {
+    white-space: nowrap;
+    float: right; }
+
+#shop-searchbar div {
+    margin: 0 !important;
+    padding: 0; }
+
+
+/* --------- PAGINATION
+-------------------- */
+
+/* - some galleries have many pages and the pagination bar's
+width would go beyond 200px. i tried splitting it into two
+rows to make it fit, but it looked awkward; might attempt it
+again tmrw D8
+- for now, i moved it to the right of the about section. i
+think this placement makes sense too but we could def. move
+it elsewhere if you've got any suggestions! 
+- some pages have pagination while others don't, so i used
+the top pagination as spacing, and unhid the bottom one*/
+.pagination {
+    opacity: 0; }
+
+#shop-items > div:nth-of-type(3) .pagination {
+    display: flex;
+    position: fixed;
+    top: 117px;
+    opacity: 1;
+    z-index: 20; }
+
+
+/* --------- SHOP ITEMS
+-------------------- */
+#shop-items {
+    padding-left: 200px !important;
+    margin-top: -40px; }
+
+.item-name, .item-qty {
+    width: 104px;
+    text-align: center;
+    background: #fff9;
+    margin: 0 auto;
+    padding: 7px 5px;
+    font-size: 12px; }
+
+.item-qty {
+    border-radius: 0 0 7px 7px;
+    padding: 0 5px 10px }
+
+.wl_item {
+    background: #fff;
+    padding: 20px 20px 15px;
+    box-sizing: content-box;
+    border-radius: 7px 7px 0 0;
+    margin: 0 5px; }
+
+.wl_item img {
+    max-width: 90%; }
+
+.wl_plus {
+    top: 70px; }
+
+@media (max-width: 630px) {
+    #shop-description {
+        display: none; }
+
+    #shop-items {
+        padding-left: 0 !important; }
+
+    .pagination:nth-of-type(1) {
+        width: 100%;
+        left: 25px; } }
+
+
+/* ----------IF NO CATEGORIES EXIST
+-----------------------------------
+body {
+    border-top: 60px solid transparent;
+    }
+.pagination:nth-of-type(1) {top: 80px;}
+
+#shop-description {
+    top: 60px;} */
+
+/* ---------------------- FOR SHOPS
+-----------------------------------
+.item-price {
+    width: 104px;
+    text-align: center;
+    background: #fff9;
+    margin: 0 auto;
+    border-radius: 0 0 7px 7px;
+    padding: 0 5px 10px ;
+    font-size: 12px; } */
+
+/* HORIZONTAL HEADER W/ IMG TO LEFT
+-----------------------------------
+#shop-header {
+    text-transform: lowercase; }
+
+#shop-description {
+    text-transform: initial; }
+
+#shop-name {
+    display: inline; }
+
+#shop-name:after {
+    content: ',' }
+
+#shop-name::before {
+    content: '';
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #c9c9;
+    background-image: url('http://127.0.0.1:50133/User%20Shops%20-%20yume%20-%20Subeta_files/clothing_ling_antbox.webp');
+    background-position: center;
+    vertical-align: middle;
+    margin-right: 10px } */
